@@ -10,6 +10,8 @@
   list-style-type: none;
   &__item {
     margin: 0 25px;
+    text-decoration: none;
+    color: red;
   }
 }
 
@@ -35,4 +37,7 @@
       opacity: 1;
     }
   }
+}
+.active-route {
+  color: blue;
 }
