@@ -4,16 +4,23 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
-import Header from "./components/Header.jsx";
+import Header from "./components/Header";
 import LayoutBlog from "./pages/LayoutBlog";
-
+import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route
+            path="/about"
+            element={
+              <ProtectedRoute user={{}}>
+                <About />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/about-company"
             element={<Navigate to="/about" replace />}
